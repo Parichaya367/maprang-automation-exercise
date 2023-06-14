@@ -1,0 +1,18 @@
+{
+	"NAME": "Jake Sim",
+	"EMAIL": "Jake.Sim@example.com",
+	"PASSWORD": "ThisIsJakePassword",
+	"FName": "Jake",
+	"LName": "Sim",
+	"Company": "Belift",
+	"Address": "123/45",
+	"Address2": "Enhypen rd.",
+	"Country": "Australia",
+	"State": "northeastern Australia",
+	"City": "Queenlands",
+	"Zipcode": 12312,
+	"MobileNum": 2123456789,
+	"EMAIL_FOR_TEST": "Jungwon.Yang@example.com",
+	"PASSWORD_FOR_TEST": "54321",
+	"NEW_NAME": "Sunoo Kim"
+}

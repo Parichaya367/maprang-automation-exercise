@@ -1,0 +1,7 @@
+{
+	"id": 44,
+	"name": "Pink Skirt",
+	"price": "Rs. 500",
+	"brand": "Burberry",
+	"category": { "usertype": { "usertype": "Women" }, "category": "Skirt" }
+}
