@@ -106,10 +106,10 @@ describe('Test Case 2: Login User with correct email and password', () => {
 		Homepage.canDisplaylogInSuccess()
 
 		//9. Click 'Delete Account' button
-		//Homepage.canDeletteAcc()
+		Homepage.canDeletteAcc()
 
 		//10. Verify that 'ACCOUNT DELETED!' is visible
-		//AccountDeleted.canDisplayAccDelText()
+		AccountDeleted.canDisplayAccDelText()
 	})
 })
 
