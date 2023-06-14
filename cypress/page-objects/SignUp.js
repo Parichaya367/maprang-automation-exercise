@@ -26,8 +26,15 @@ class SignUp extends Page {
 		cy.get(this.enterAccInfoText).should('exist')
 	}
 
-	static fillDetial(
-		password,
+	static fillDetail1(password) {
+		cy.get(this.checkTitles).check().should('be.checked')
+		cy.get(this.fillPassword).type(password)
+		cy.get(this.selectDay).select(15)
+		cy.get(this.selectMonth).select('November')
+		cy.get(this.selectYear).select('2002')
+	}
+
+	static fillDetail2(
 		fname,
 		lname,
 		company,
@@ -38,13 +45,6 @@ class SignUp extends Page {
 		zipcode,
 		mobilephone
 	) {
-		cy.get(this.checkTitles).check().should('be.checked')
-		cy.get(this.fillPassword).type(password)
-		cy.get(this.selectDay).select(15)
-		cy.get(this.selectMonth).select('November')
-		cy.get(this.selectYear).select('2002')
-		cy.get(this.selectNews).check()
-		cy.get(this.selectReceiveOff).check()
 		cy.get(this.fillfname).type(fname)
 		cy.get(this.filllname).type(lname)
 		cy.get(this.fillCompany).type(company)
@@ -57,6 +57,16 @@ class SignUp extends Page {
 		cy.get(this.fillCity).type(city)
 		cy.get(this.fillZipcode).type(zipcode)
 		cy.get(this.fillMobliePhone).type(mobilephone)
+	}
+
+	static selectCheckBoxNews() {
+		cy.get(this.selectNews).check()
+	}
+	static selectCheckBoxPartner() {
+		cy.get(this.selectReceiveOff).check()
+	}
+
+	static canClickCreateButton() {
 		cy.get(this.clickCreateAcc).click()
 	}
 }

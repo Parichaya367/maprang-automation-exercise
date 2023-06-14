@@ -4,7 +4,7 @@ const SignUp = require('../../page-objects/SignUp')
 const AccountCreate = require('../../page-objects/AccountCreate')
 const AccountDeleted = require('../../page-objects/AccountDeleted')
 
-describe('Test Case 1: Register User', () => {
+describe.only('Test Case 1: Register User', () => {
 	//To P'Nut! This one is contained register acc part and delete acc part be careful if you want the acc to still exist!
 
 	beforeEach(() => {
@@ -33,12 +33,16 @@ describe('Test Case 1: Register User', () => {
 		SignUp.CanDisplayEnterAccInfoText()
 
 		//9. Fill details: Title, Name, Email, Password, Date of birth
+		SignUp.fillDetail1(this.data.PASSWORD)
+
 		//10. Select checkbox 'Sign up for our newsletter!'
+		SignUp.selectCheckBoxNews()
+
 		//11. Select checkbox 'Receive special offers from our partners!'
+		SignUp.selectCheckBoxPartner()
+
 		//12. Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
-		//13. Click 'Create Account button'
-		SignUp.fillDetial(
-			this.data.PASSWORD,
+		SignUp.fillDetail2(
 			this.data.FName,
 			this.data.LName,
 			this.data.Company,
@@ -49,6 +53,9 @@ describe('Test Case 1: Register User', () => {
 			this.data.Zipcode,
 			this.data.MobileNum
 		)
+
+		//13. Click 'Create Account button'
+		SignUp.canClickCreateButton()
 
 		//14. Verify that 'ACCOUNT CREATED!' is visible
 		AccountCreate.canDisplayAccCreatedText()
@@ -172,7 +179,7 @@ describe('Test Case 4: Logout User', () => {
 	})
 })
 
-describe.only('Test Case 5: Register User with existing email', () => {
+describe('Test Case 5: Register User with existing email', () => {
 	beforeEach(() => {
 		cy.fixture('mydata.json').as('data')
 	})
